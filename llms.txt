@@ -1,0 +1,47 @@
+# Spring-NWVMC (`0.1.0` — Official Maven Central)
+
+> Official Documentation Portal & Universal AI-Agent Adoption Kit for **Spring-NWVMC `0.1.0`** (`io.github.natswarchuan:spring-nwvmc:0.1.0` on Maven Central).
+> Live Interactive Portal (20 languages): https://natswarchuan.github.io/Spring-NWVMC-document/
+> Framework Source Repository: https://github.com/NatswarChuan/Spring-NWVMC
+
+## Quick Facts
+
+- **Maven Central Coordinate:** `io.github.natswarchuan:spring-nwvmc:0.1.0` (Java 21 LTS + Spring Boot 3.2.5 / 3.3.5 / 3.4.0; `<parameters>true</parameters>` required)
+- **Optional JitPack Mirror:** `com.github.NatswarChuan:Spring-NWVMC:v0.1.0`
+- **2-Directory Contract:** `entity/` (JPA `@Entity` extending `BaseAuditEntity`, NEVER `@Data`, NEVER `@SoftDelete`) + `controller/` (`@AutoRestController` interface extending `AutoApiController<E>` or narrow composable interfaces `AutoReadApi<E>`..`AutoAiApi<E>`).
+- **6 Exact Annotation Packages (60 annotations, 133 attributes):** `io.github.natswarchuan.core.annotation.*` (54), `io.github.natswarchuan.module.cache.http.annotation.HttpCacheable`, `io.github.natswarchuan.module.datasource.annotation.{TargetDataSource, TargetDatabasePlatform}`, `io.github.natswarchuan.module.event.annotation.PublishCloudEvent`, `io.github.natswarchuan.module.lock.annotation.DistributedLock`, `io.github.natswarchuan.module.webhook.annotation.EntityWebhook`.
+- **Verified Runtime Rules:** `@StateMachine` colon syntax `"FROM:TO1,TO2"` + `POST /{id}/transition?targetState=...`; dot-syntax query filters (`.gte`, `.like`); `ObjectProvider<T>` for framework `@AutoComponent` helpers; non-final `@Lazy @Service` + lazy caller injection (`ObjectProvider<MyService>`/`@Lazy`) for AOP; NEVER `@Transactional` on `public final class` Helpers; dev JWT endpoint `POST /api/v1/auth/token?username=admin&role=ROLE_ADMIN`; `JwtTokenService.generateToken(username, userId, roles)` (`username` FIRST); `studio.enabled=false` & `JWT_SECRET >= 32` bytes in production.
+
+## AI-Agent Adoption Kit
+
+- [AI-Agent Kit README](ai-agent-kit/README.md)
+- [INTRO](ai-agent-kit/INTRO.md)
+- [RULES](ai-agent-kit/RULES.md)
+- [SKILL](ai-agent-kit/SKILL.md)
+- [CHECKLIST](ai-agent-kit/CHECKLIST.md)
+- [01 — Exact 60 Annotations & 133 Attributes](ai-agent-kit/references/01-annotations-exact-matrix.md)
+- [02 — 40 Auto-Endpoints & 13 Dot-Syntax Operators](ai-agent-kit/references/02-endpoints-and-query-dsl.md)
+- [03 — Exact YAML Properties, Multi-Datasource & Profiles](ai-agent-kit/references/03-yaml-properties-and-profiles.md)
+- [04 — Verified Copy-Paste Cookbook (incl. @MultiTenant & DB-RBAC)](ai-agent-kit/references/04-cookbook-verified-patterns.md)
+- [05 — Exact Non-Annotation Class, Constant & SPI Imports](ai-agent-kit/references/05-imports-and-spi-contracts.md)
+
+## Platform Drop-In Adapters
+
+- [AGENTS.md (Codex / Antigravity / Open Standard)](ai-agent-kit/adapters/AGENTS.md)
+- [CLAUDE.md (Claude Code)](ai-agent-kit/adapters/CLAUDE.md)
+- [GEMINI.md (Antigravity / Gemini CLI)](ai-agent-kit/adapters/GEMINI.md)
+- [Cursor Rule (.mdc)](ai-agent-kit/adapters/cursor/spring-nwvmc.mdc)
+- [GitHub Copilot Instructions](ai-agent-kit/adapters/copilot-instructions.md)
+- [Windsurf Rules](ai-agent-kit/adapters/windsurfrules)
+- [Cline / Roo Code Rules](ai-agent-kit/adapters/clinerules)
+- [Generic LLM System Prompt](ai-agent-kit/adapters/GENERIC_LLM_PROMPT.md)
+
+## Human Reference Manuals & Topic Guides
+
+- [Interactive Portal (20 Languages)](index.html)
+- [English Reference Manual](GUIDE_EN.md)
+- [Tiếng Việt Manual](GUIDE_VI.md)
+- [日本語マニュアル](GUIDE_JA.md)
+- [中文参考手册](GUIDE_ZH.md)
+- [Topic Guides (VI 01..07)](topics/01_GETTING_STARTED.md)
+- [Topic Guides (EN 01..07)](topics/en/01_GETTING_STARTED.md)
