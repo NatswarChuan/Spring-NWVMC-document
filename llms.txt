@@ -36,12 +36,15 @@
 - [Cline / Roo Code Rules](ai-agent-kit/adapters/clinerules)
 - [Generic LLM System Prompt](ai-agent-kit/adapters/GENERIC_LLM_PROMPT.md)
 
-## Human Reference Manuals & Topic Guides
+## Human Reference Manuals & 20-Language Topic Guides (140 Markdown Guides)
 
 - [Interactive Portal (20 Languages)](index.html)
+- [All 20-Language Topic Guides Index (`topics/README.md`)](topics/README.md)
 - [English Reference Manual](GUIDE_EN.md)
 - [Tiếng Việt Manual](GUIDE_VI.md)
 - [日本語マニュアル](GUIDE_JA.md)
 - [中文参考手册](GUIDE_ZH.md)
-- [Topic Guides (VI 01..07)](topics/01_GETTING_STARTED.md)
-- [Topic Guides (EN 01..07)](topics/en/01_GETTING_STARTED.md)
+- [Topic Guides — English (`en/01..07`)](topics/en/01_GETTING_STARTED.md)
+- [Topic Guides — Tiếng Việt (`vi/01..07`)](topics/vi/01_GETTING_STARTED.md)
+- [Topic Guides — 日本語 (`ja/01..07`)](topics/ja/01_GETTING_STARTED.md)
+- [Topic Guides — 中文 (`zh/01..07`)](topics/zh/01_GETTING_STARTED.md)
