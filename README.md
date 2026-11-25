@@ -49,14 +49,16 @@ npm run dev      # Local Vite preview server
 npm run build    # Compiles TypeScript + Vite bundle and syncs dist/ -> index.html & assets/
 ```
 
-## Install AI-Agent Kit into Any Spring Boot Project
+## Install AI-Agent Kit into Any Spring Boot Project (Zero Clone Required)
+
+Run directly inside your Spring Boot project root:
 
 ```powershell
 # Windows (PowerShell)
-.\ai-agent-kit\install.ps1 -Target "C:\path\to\your-spring-boot-project" -Agent all
+$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; & $s -Target "." -Agent all; Remove-Item $s -Force
 ```
 
 ```bash
 # macOS / Linux / Git Bash
-./ai-agent-kit/install.sh --target /path/to/your-spring-boot-project --agent all
+curl -fsSL https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.sh | bash -s -- --target . --agent all
 ```

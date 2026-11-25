@@ -39,37 +39,44 @@
 
 ---
 
-## 3. Cài Đặt Trong 1 Lệnh (1-Command Installation)
+## 3. Cài Đặt Trong 1 Lệnh — Không Cần Clone Repo (Zero-Clone 1-Liner)
+
+Mở terminal **ngay trong thư mục gốc dự án Spring Boot của bạn** và chạy 1 dòng lệnh sau (script tự động tải đầy đủ bộ Kit trực tiếp từ `https://github.com/NatswarChuan/Spring-NWVMC-document` mà không cần có sẵn file trên máy local):
 
 ### Windows (PowerShell)
 
 ```powershell
-# Cài đầy đủ cho TẤT CẢ các AI Agent (khuyên dùng cho team dùng nhiều IDE/model khác nhau)
-.\ai-agent-kit\install.ps1 -Target "C:\path\to\your-spring-boot-project"
+# Cài đầy đủ cho TẤT CẢ các AI Agent (chạy trực tiếp trong thư mục gốc dự án Spring Boot của bạn)
+$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; & $s -Target "." -Agent all; Remove-Item $s -Force
 
-# Hoặc chỉ cài cho 1 AI Agent cụ thể:
-# Giá trị -Agent: all | antigravity | claude | codex | cursor | copilot | windsurf | cline | generic
-.\ai-agent-kit\install.ps1 -Target "C:\path\to\your-spring-boot-project" -Agent claude
+# Hoặc chỉ cài cho 1 AI Agent cụ thể (all | antigravity | claude | codex | cursor | copilot | windsurf | cline | generic):
+$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; & $s -Target "." -Agent claude; Remove-Item $s -Force
 
-# Ghi đè các tệp root adapter đã tồn tại (mặc định script giữ nguyên tệp cũ để tránh mất rule riêng của bạn):
-.\ai-agent-kit\install.ps1 -Target "C:\path\to\your-spring-boot-project" -Agent all -Force
+# Thêm -Force nếu muốn ghi đè các file root adapter đã tồn tại (mặc định giữ nguyên file cũ an toàn)
 ```
 
 ### macOS / Linux / Git Bash
 
 ```bash
-# Cài đầy đủ cho TẤT CẢ các AI Agent
-./ai-agent-kit/install.sh --target /path/to/your-spring-boot-project
+# Cài đầy đủ cho TẤT CẢ các AI Agent (chạy trực tiếp trong thư mục gốc dự án Spring Boot của bạn)
+curl -fsSL https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.sh | bash -s -- --target . --agent all
 
 # Hoặc chỉ cài cho 1 AI Agent cụ thể:
-./ai-agent-kit/install.sh --target /path/to/your-spring-boot-project --agent cursor
+curl -fsSL https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.sh | bash -s -- --target . --agent cursor
 
-# Ghi đè tệp root adapter đã tồn tại:
-./ai-agent-kit/install.sh --target /path/to/your-spring-boot-project --agent all --force
+# Thêm --force để ghi đè file root adapter cũ:
+curl -fsSL https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.sh | bash -s -- --target . --agent all --force
 ```
 
-### Cài thủ công (Không dùng script)
+### Cài qua Git Clone (Offline / Mạng Công Ty) hoặc Thủ Công
 
+```bash
+git clone --depth 1 https://github.com/NatswarChuan/Spring-NWVMC-document.git /tmp/nwvmc-docs
+/tmp/nwvmc-docs/ai-agent-kit/install.sh --target /path/to/your-spring-boot-project --agent all
+rm -rf /tmp/nwvmc-docs
+```
+
+Hoặc copy thủ công từ repo `Spring-NWVMC-document`:
 1. Copy `ai-agent-kit/{SKILL.md, INTRO.md, RULES.md, CHECKLIST.md, references/}` vào `<your-project>/.agents/skills/spring-nwvmc-adoption/` (và `.claude/skills/spring-nwvmc-adoption/` nếu dùng Claude Code).
 2. Copy tệp adapter tương ứng trong `ai-agent-kit/adapters/` vào đúng vị trí theo bảng mục 2 ở trên.
 

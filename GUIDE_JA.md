@@ -203,9 +203,9 @@ mvn -Ppublish org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeAggregateBom "-Dcyc
 **Spring-NWVMC AI-Agent Adoption Kit**（`INTRO.md`・`RULES.md`・`SKILL.md`・`CHECKLIST.md`・自動検証済み `references/01..05`・8 種の `adapters/`）を導入することで、Antigravity / Gemini、Claude Code、OpenAI Codex、Cursor、GitHub Copilot、Windsurf、Cline、ChatGPT / DeepSeek / Qwen などのあらゆる AI エージェントが `v0.1.0` をハルシネーションなく正確に実装できます：
 
 ```bash
-# Windows (PowerShell)
-.\ai-agent-kit\install.ps1 -Target "C:\path\to\your-spring-boot-project" -Agent all
+# Windows（PowerShell — Spring Boot プロジェクト直下でそのまま実行、クローン不要）
+$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; & $s -Target "." -Agent all; Remove-Item $s -Force
 
-# macOS / Linux / Git Bash
-./ai-agent-kit/install.sh --target /path/to/your-spring-boot-project --agent all
+# macOS / Linux / Git Bash（プロジェクト直下でそのまま実行、クローン不要）
+curl -fsSL https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.sh | bash -s -- --target . --agent all
 ```

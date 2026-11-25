@@ -19,27 +19,35 @@ The **Spring-NWVMC AI-Agent Adoption Kit** (`../../../ai-agent-kit/`) equips **e
 
 ---
 
-## 2. 1-Command Installation into Any Spring Boot Project
+## 2. 1-Command Zero-Clone Installation into Any Spring Boot Project
+
+Open a terminal **directly inside your Spring Boot project root** and paste either command below — no local clone or pre-existing files required (the script fetches the verified kit files straight from `https://github.com/NatswarChuan/Spring-NWVMC-document`):
 
 ### Windows (PowerShell)
 
 ```powershell
-# Install for ALL AI coding agents & models
-.\ai-agent-kit\install.ps1 -Target "C:\path\to\your-spring-boot-project" -Agent all
+# Install for ALL AI coding agents & models into the current directory (".")
+$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; & $s -Target "." -Agent all; Remove-Item $s -Force
 
-# Or target a single agent: all | antigravity | claude | codex | cursor | copilot | windsurf | cline | generic
-.\ai-agent-kit\install.ps1 -Target "C:\path\to\your-spring-boot-project" -Agent claude
+# Or target a single agent (all | antigravity | claude | codex | cursor | copilot | windsurf | cline | generic):
+$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; & $s -Target "." -Agent claude; Remove-Item $s -Force
 
-# Overwrite existing root adapter files (default preserves existing files safely)
-.\ai-agent-kit\install.ps1 -Target "C:\path\to\your-spring-boot-project" -Agent all -Force
+# Pass -Force to overwrite existing root adapter files (default preserves existing files safely)
 ```
 
 ### macOS / Linux / Git Bash
 
 ```bash
-./ai-agent-kit/install.sh --target /path/to/your-spring-boot-project --agent all
-./ai-agent-kit/install.sh --target /path/to/your-spring-boot-project --agent cursor
-./ai-agent-kit/install.sh --target /path/to/your-spring-boot-project --agent all --force
+curl -fsSL https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.sh | bash -s -- --target . --agent all
+curl -fsSL https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.sh | bash -s -- --target . --agent cursor
+```
+
+### Clone First (Offline / Corporate Proxy)
+
+```bash
+git clone --depth 1 https://github.com/NatswarChuan/Spring-NWVMC-document.git /tmp/nwvmc-docs
+/tmp/nwvmc-docs/ai-agent-kit/install.sh --target /path/to/your-spring-boot-project --agent all
+rm -rf /tmp/nwvmc-docs
 ```
 
 ---

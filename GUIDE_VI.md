@@ -235,9 +235,9 @@ mvn -Ppublish org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeAggregateBom "-Dcyc
 Bộ **AI-Agent Adoption Kit** (`INTRO.md`, `RULES.md`, `SKILL.md`, `CHECKLIST.md`, 5 tài liệu tham chiếu sâu `references/01..05` kiểm chứng máy 1:1 và 8 tệp `adapters/`) giúp **mọi AI-Agent và mô hình LLM** (Antigravity/Gemini, Claude Code, OpenAI Codex, Cursor, GitHub Copilot, Windsurf, Cline/Roo Code, ChatGPT, DeepSeek, Qwen, Grok, Mistral, Llama/Ollama, Aider) triển khai Spring-NWVMC `v0.1.0` chính xác ngay lần đầu:
 
 ```bash
-# Windows (PowerShell)
-.\ai-agent-kit\install.ps1 -Target "C:\path\to\your-spring-boot-project" -Agent all
+# Windows (PowerShell — chạy trực tiếp trong thư mục gốc dự án Spring Boot của bạn, không cần clone repo)
+$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; & $s -Target "." -Agent all; Remove-Item $s -Force
 
-# macOS / Linux / Git Bash
-./ai-agent-kit/install.sh --target /path/to/your-spring-boot-project --agent all
+# macOS / Linux / Git Bash (chạy trực tiếp trong thư mục gốc dự án Spring Boot của bạn, không cần clone repo)
+curl -fsSL https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.sh | bash -s -- --target . --agent all
 ```

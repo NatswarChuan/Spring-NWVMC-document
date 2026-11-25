@@ -237,9 +237,9 @@ For the exhaustive specification of every attribute, Java type, default value, *
 Use the model-agnostic **AI-Agent Adoption Kit** (`INTRO.md`, `RULES.md`, `SKILL.md`, `CHECKLIST.md`, 5 machine-verified `references/01..05`, and 8 drop-in `adapters/`) so **any AI coding agent or LLM** (Antigravity/Gemini, Claude Code, OpenAI Codex, Cursor, GitHub Copilot, Windsurf, Cline/Roo Code, ChatGPT, DeepSeek, Qwen, Grok, Mistral, Llama/Ollama, Aider) integrates Spring-NWVMC `v0.1.0` accurately without hallucinating annotations or hitting runtime pitfalls:
 
 ```bash
-# Windows (PowerShell)
-.\ai-agent-kit\install.ps1 -Target "C:\path\to\your-spring-boot-project" -Agent all
+# Windows (PowerShell — run directly inside your Spring Boot project root, zero clone needed)
+$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; & $s -Target "." -Agent all; Remove-Item $s -Force
 
-# macOS / Linux / Git Bash
-./ai-agent-kit/install.sh --target /path/to/your-spring-boot-project --agent all
+# macOS / Linux / Git Bash (run directly inside your Spring Boot project root, zero clone needed)
+curl -fsSL https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.sh | bash -s -- --target . --agent all
 ```
