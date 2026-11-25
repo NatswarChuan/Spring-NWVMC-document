@@ -24,6 +24,8 @@
 - [03 — Exact YAML Properties, Multi-Datasource & Profiles](ai-agent-kit/references/03-yaml-properties-and-profiles.md)
 - [04 — Verified Copy-Paste Cookbook (incl. @MultiTenant & DB-RBAC)](ai-agent-kit/references/04-cookbook-verified-patterns.md)
 - [05 — Exact Non-Annotation Class, Constant & SPI Imports](ai-agent-kit/references/05-imports-and-spi-contracts.md)
+- [06 — SDD (Spec-Driven) & TDD (Test-Driven) Playbook](ai-agent-kit/references/06-sdd-and-tdd-playbook.md)
+- [SDD Starter Templates (`spec.template.md`, `plan.template.md`, `tasks.template.md`)](ai-agent-kit/templates/)
 
 ## Platform Drop-In Adapters
 

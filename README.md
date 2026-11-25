@@ -35,7 +35,7 @@ Official **GitHub Pages** documentation portal (built bundle + full React 19 / V
 | :--- | :--- |
 | [`index.html`](index.html), [`assets/`](assets/), [`dist/`](dist/), [`.nojekyll`](.nojekyll) | Production-built static site ready for **GitHub Pages** (Deploy from branch `main` / `(root)`) |
 | [`src/`](src/), [`scripts/`](scripts/), [`package.json`](package.json), [`vite.config.ts`](vite.config.ts) | Full React 19 + Vite + TypeScript source code for the 20-language documentation portal |
-| [`ai-agent-kit/`](ai-agent-kit/) | Universal `INTRO`, `RULES`, `SKILL`, `CHECKLIST`, 5 machine-verified `references/01..05`, 8 drop-in `adapters/` (Antigravity/Gemini, Claude Code, Codex, Cursor, Copilot, Windsurf, Cline, Generic LLMs), and 1-command installers (`install.ps1` / `install.sh`) |
+| [`ai-agent-kit/`](ai-agent-kit/) | Universal **SDD + TDD** `INTRO`, `RULES`, `SKILL`, `CHECKLIST`, 6 machine-verified `references/01..06` (incl. SDD & TDD Playbook), `templates/{spec,plan,tasks}.template.md`, 8 drop-in `adapters/` (Antigravity/Gemini, Claude Code, Codex, Cursor, Copilot, Windsurf, Cline, Generic LLMs), and zero-clone installers (`install.ps1` / `install.sh`) |
 | [`llms.txt`](llms.txt) | Structured `llmstxt.org` index for AI agents and web crawlers |
 | [`GUIDE_EN.md`](GUIDE_EN.md), [`GUIDE_VI.md`](GUIDE_VI.md), [`GUIDE_JA.md`](GUIDE_JA.md), [`GUIDE_ZH.md`](GUIDE_ZH.md), [`topics/`](topics/README.md) | Complete synchronized Markdown reference manuals and **20-language** focused topic guides (`topics/<lang>/01..07`, `140` guides total) |
 
