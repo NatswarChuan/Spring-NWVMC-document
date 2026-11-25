@@ -27,10 +27,10 @@ Mở terminal **ngay trong thư mục gốc dự án Spring Boot của bạn** v
 
 ```powershell
 # Cài đầy đủ cho TẤT CẢ AI-Agent & IDE ngay tại thư mục dự án hiện tại (".")
-$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; & $s -Target "." -Agent all; Remove-Item $s -Force
+$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; powershell -ExecutionPolicy Bypass -File $s -Target "." -Agent all; Remove-Item $s -Force
 
 # Hoặc chọn riêng 1 công cụ (all | antigravity | claude | codex | cursor | copilot | windsurf | cline | generic):
-$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; & $s -Target "." -Agent claude; Remove-Item $s -Force
+$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; powershell -ExecutionPolicy Bypass -File $s -Target "." -Agent claude; Remove-Item $s -Force
 
 # Thêm -Force để ghi đè file root adapter cũ (mặc định bảo toàn an toàn file sẵn có)
 ```

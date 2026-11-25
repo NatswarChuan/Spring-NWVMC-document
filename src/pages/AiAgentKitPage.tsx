@@ -158,15 +158,15 @@ export const AiAgentKitPage: React.FC<AiAgentKitPageProps> = ({ currentLang }) =
             fileName: 'install-nwvmc-kit.ps1 (Zero-Clone 1-Liner)',
             highlightLines: [2, 6, 10],
             code: `# Option 1 (Recommended — ZERO clone needed! Run directly inside your Spring Boot project root):
-$s="$env:TEMP\\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; & $s -Target "." -Agent all; Remove-Item $s -Force
+$s="$env:TEMP\\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; powershell -ExecutionPolicy Bypass -File $s -Target "." -Agent all; Remove-Item $s -Force
 
 # Target a single agent only (-Agent all | antigravity | claude | codex | cursor | copilot | windsurf | cline | generic):
-$s="$env:TEMP\\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; & $s -Target "." -Agent claude; Remove-Item $s -Force
+$s="$env:TEMP\\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; powershell -ExecutionPolicy Bypass -File $s -Target "." -Agent claude; Remove-Item $s -Force
 
 # Add -Force to overwrite existing root adapter files (default preserves existing files safely)
 
 # Option 2 (Clone repo first — useful behind offline/corporate proxies):
-git clone --depth 1 https://github.com/NatswarChuan/Spring-NWVMC-document.git "$env:TEMP\\nwvmc-docs"; & "$env:TEMP\\nwvmc-docs\\ai-agent-kit\\install.ps1" -Target "." -Agent all; Remove-Item "$env:TEMP\\nwvmc-docs" -Recurse -Force`,
+git clone --depth 1 https://github.com/NatswarChuan/Spring-NWVMC-document.git "$env:TEMP\\nwvmc-docs"; powershell -ExecutionPolicy Bypass -File "$env:TEMP\\nwvmc-docs\\ai-agent-kit\\install.ps1" -Target "." -Agent all; Remove-Item "$env:TEMP\\nwvmc-docs" -Recurse -Force`,
           },
           {
             id: 'kit-sh',

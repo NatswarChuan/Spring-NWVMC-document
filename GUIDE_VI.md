@@ -236,7 +236,7 @@ Bộ **AI-Agent Adoption Kit** (`INTRO.md`, `RULES.md`, `SKILL.md`, `CHECKLIST.m
 
 ```bash
 # Windows (PowerShell — chạy trực tiếp trong thư mục gốc dự án Spring Boot của bạn, không cần clone repo)
-$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; & $s -Target "." -Agent all; Remove-Item $s -Force
+$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; powershell -ExecutionPolicy Bypass -File $s -Target "." -Agent all; Remove-Item $s -Force
 
 # macOS / Linux / Git Bash (chạy trực tiếp trong thư mục gốc dự án Spring Boot của bạn, không cần clone repo)
 curl -fsSL https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.sh | bash -s -- --target . --agent all

@@ -8,7 +8,7 @@
     and selected platform adapters without overwriting existing root adapter files unless -Force is passed.
 .EXAMPLE
     # Zero-clone one-liner from inside your Spring Boot project root:
-    $s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; & $s -Target "." -Agent all; Remove-Item $s -Force
+    $s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; powershell -ExecutionPolicy Bypass -File $s -Target "." -Agent all; Remove-Item $s -Force
 .EXAMPLE
     # Target a specific agent only:
     .\install.ps1 -Target "C:\Projects\my-spring-app" -Agent cursor

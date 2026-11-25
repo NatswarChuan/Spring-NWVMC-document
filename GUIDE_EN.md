@@ -238,7 +238,7 @@ Use the model-agnostic **AI-Agent Adoption Kit** (`INTRO.md`, `RULES.md`, `SKILL
 
 ```bash
 # Windows (PowerShell — run directly inside your Spring Boot project root, zero clone needed)
-$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; & $s -Target "." -Agent all; Remove-Item $s -Force
+$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; powershell -ExecutionPolicy Bypass -File $s -Target "." -Agent all; Remove-Item $s -Force
 
 # macOS / Linux / Git Bash (run directly inside your Spring Boot project root, zero clone needed)
 curl -fsSL https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.sh | bash -s -- --target . --agent all
