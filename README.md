@@ -54,8 +54,8 @@ npm run build    # Compiles TypeScript + Vite bundle and syncs dist/ -> index.ht
 Run directly inside your Spring Boot project root:
 
 ```powershell
-# Windows (PowerShell)
-$s="$env:TEMP\install-nwvmc-kit.ps1"; irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; powershell -ExecutionPolicy Bypass -File $s -Target "." -Agent all; Remove-Item $s -Force
+# Windows (PowerShell — NOT cmd.exe; enforces TLS 1.2 + unique temp file cleanup)
+[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12; $s=Join-Path $env:TEMP "nwvmc-$([guid]::NewGuid()).ps1"; try { irm "https://raw.githubusercontent.com/NatswarChuan/Spring-NWVMC-document/main/ai-agent-kit/install.ps1" -OutFile $s; powershell -ExecutionPolicy Bypass -File $s -Target "." -Agent all } finally { Remove-Item $s -Force -ErrorAction SilentlyContinue }
 ```
 
 ```bash
