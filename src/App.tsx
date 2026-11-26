@@ -55,7 +55,7 @@ function resolveInitialTheme(): 'dark' | 'light' {
       return saved;
     }
   }
-  return 'dark';
+  return 'light';
 }
 
 function resolveInitialTopic(): string {

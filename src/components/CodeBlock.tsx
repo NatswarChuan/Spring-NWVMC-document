@@ -187,7 +187,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
           </div>
         ) : (
           <div className="code-file-meta">
-            <FileCode size={14} style={{ color: '#34d399', flexShrink: 0 }} />
+            <FileCode size={14} style={{ color: '#A5D0B9', flexShrink: 0 }} />
             <span className="code-file-name">{displayFile ?? displayLang}</span>
           </div>
         )}
